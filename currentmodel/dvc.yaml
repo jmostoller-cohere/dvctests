@@ -1,0 +1,29 @@
+artifacts:
+  tfidf-triplet-ensemble:
+    path: pipeline
+    type: model
+    desc: "Dummy th pipeline"
+
+stages:
+  get-full-feedback:
+    cmd: echo ${full-feedback.end-date}
+    params:
+      - full-feedback
+  tfidf:
+    cmd: echo "${full-feedback.end-date} to ${full-feedback.end-date}" > pipeline/tfidf.txt
+    params:
+      - full-feedback
+    outs:
+      - pipeline/tfidf.txt
+  quantile:
+    cmd: echo "${full-feedback.end-date} to ${full-feedback.end-date}" > pipeline/quantile.txt
+    params:
+      - full-feedback
+    outs:
+      - pipeline/quantile.txt
+  triplet:
+    cmd: sleep ${triplet.wait} && echo "Ummmmm" > pipeline/triplet.txt
+    params:
+      - triplet
+    outs:
+      - pipeline/triplet.txt

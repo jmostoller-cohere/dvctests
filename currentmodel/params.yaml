@@ -1,0 +1,8 @@
+full-feedback:
+  start-date: '2022-11-05'
+  end-date: '2023-08-01'
+
+triplet:
+  wait: 5
+  traindate: '2023-08-01'
+  dayback: 30
